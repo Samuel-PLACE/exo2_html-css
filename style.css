@@ -113,10 +113,10 @@ a {
 }
 
 
-/*--Media querie à 992px--*/
+/*--Media query à 992px--*/
 @media (min-width: 992px) {
 
-
+/*--Header--*/
     .flaticon-sun, .temperature {
         display: inline;
     }
@@ -132,26 +132,26 @@ a {
 /*--Barre des reseau sociaux--*/
     .reseau {
         background-color: #2682C2;
-        width: 50px;
+        width: 65px;
         display: flex;
         flex-direction: column;
         margin-top: 50px;
     }
 
     .reseau > a {
-        padding-bottom: 10px;
-        padding-left: 10px;
-        padding-top: 10px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-top: 15px;
     }
 
     .reseau > a > i::before {
         margin-left: 0;
+        font-size: 25px;
     }
 
     .reseau > a:hover {
         background-color: #10435F;
         width: 150px;
-
     }
 
     .reseau > a:hover:after {
@@ -190,7 +190,6 @@ a {
     }
 
     .menu > li {
-        /*border-left: 2px solid #787878;*/
         margin-left: 2px;
         border-bottom: none;
         padding-left: 10%;
