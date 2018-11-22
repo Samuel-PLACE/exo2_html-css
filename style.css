@@ -84,22 +84,18 @@ header > i {
 /*--Suppression des caractère soulifgné sur tous les liens--*/
 a {
     text-decoration: none;
-}
-
-/*--Colorer en blanc tous les icones utilisé--*/
-i {
     color: white;
 }
 
 /*--Menu--*/
 .menu {
-    background-color: rgba(0,0,0,0.5);
     margin: 0 10px;
     list-style: none;
     padding: 0;
 }
 
 .menu >li {
+    background-color: rgba(0,0,0,0.5);
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -107,13 +103,12 @@ i {
 }
 
 .menu > li >a {
-    color: white;
     display: block;
     font-size: x-large;
 }
 
 /*--Cacher tous les éléments HTML non présents dans la version mobile--*/
-.reseau, .flaticon-sun, .reseau > a > p {
+.reseau, .flaticon-sun, .temperature {
     display: none;
 }
 
@@ -121,6 +116,19 @@ i {
 /*--Media querie à 992px--*/
 @media (min-width: 992px) {
 
+
+    .flaticon-sun, .temperature {
+        display: inline;
+    }
+
+    .temperature {
+        margin-left: 10px;
+    }
+
+    .flaticon-sun {
+        padding-right: 10px;
+        border-right: 1px groove white;
+    }
 /*--Barre des reseau sociaux--*/
     .reseau {
         background-color: #2682C2;
@@ -138,10 +146,6 @@ i {
 
     .reseau > a > i::before {
         margin-left: 0;
-    }
-
-    .flaticon-sun {
-        display: inline;
     }
 
     .reseau > a:hover {
@@ -182,13 +186,17 @@ i {
     /*--Menu--*/
     .menu {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .menu > li {
-        border-left: 2px solid #787878;
+        /*border-left: 2px solid #787878;*/
+        margin-left: 2px;
         border-bottom: none;
         padding-left: 10%;
         padding-right: 10%;
     }
 }
+
+
+
