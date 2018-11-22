@@ -1,47 +1,194 @@
-body {
-    margin: 0;
-    padding: 0;
+/*--importation des icones de flaticon--*/
+@font-face {
+    font-family: "Flaticon";
+    src: url("./img/font/Flaticon.eot");
+    src: url("./img/font/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("./img/font/Flaticon.woff") format("woff"),
+    url("./img/font/Flaticon.ttf") format("truetype"),
+    url("./img/font/Flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: "Flaticon";
+        src: url("./img/font/Flaticon.svg#Flaticon") format("svg");
+    }
+}
 
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-size: 20px;
+    font-style: normal;
+    margin-left: 20px;
+}
+
+.flaticon-facebook-logo:before { content: "\f100"; }
+.flaticon-twitter-logo-silhouette:before { content: "\f101"; }
+.flaticon-instagram-social-network-logo-of-photo-camera:before { content: "\f102"; }
+.flaticon-pinterest-logo:before { content: "\f103"; }
+.flaticon-youtube:before { content: "\f104"; }
+.flaticon-linkedin-logo:before { content: "\f105"; }
+.flaticon-search:before { content: "\f106"; }
+.flaticon-sun:before { content: "\f107"; }
+.flaticon-menu:before { content: "\f108"; }
+.flaticon-vertical-line:before { content: "\f109"; }
+
+
+/*--body--*/
+body {
+    background: url("img/lauzanne_img.jpg")no-repeat 70%;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/*--Pour positionner le menu en fin de page sans utiliser les position--*/
+.content {
+    flex-grow:1;
+}
+
+/*--Header--*/
 header {
     background-color: #3A3E47;
     display: flex;
     justify-content: space-between;
     color: white;
     padding: 1em;
+    max-height: 30px;
 }
 
 h1 {
     margin: 0;
+    font-size: large;
+}
+
+.logo{
+    max-height: 30px;
 }
 
 .logo > img {
-    max-width: 100%;
+    height: 100%;
 }
 
-header > .icon {
+header > i {
     width: 10%;
 }
 
-symbol {
+/*--Suppression des caractère soulifgné sur tous les liens--*/
+a {
+    text-decoration: none;
+}
+
+/*--Colorer en blanc tous les icones utilisé--*/
+i {
     color: white;
 }
 
-.background {
-    background: url("img/lauzanne_img.jpg")no-repeat 70%;
-    background-size: cover;
-    height: 1282px;
+/*--Menu--*/
+.menu {
+    background-color: rgba(0,0,0,0.5);
+    margin: 0 10px;
+    list-style: none;
+    padding: 0;
 }
 
-.icon {
-    display: inline;
+.menu >li {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #787878;
 }
 
-path {
+.menu > li >a {
     color: white;
+    display: block;
+    font-size: x-large;
 }
 
-.menu, .reseau {
+/*--Cacher tous les éléments HTML non présents dans la version mobile--*/
+.reseau, .flaticon-sun, .reseau > a > p {
     display: none;
+}
+
+
+/*--Media querie à 992px--*/
+@media (min-width: 992px) {
+
+/*--Barre des reseau sociaux--*/
+    .reseau {
+        background-color: #2682C2;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .reseau > a {
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    .reseau > a > i::before {
+        margin-left: 0;
+    }
+
+    .flaticon-sun {
+        display: inline;
+    }
+
+    .reseau > a:hover {
+        background-color: #10435F;
+        width: 150px;
+
+    }
+
+    .reseau > a:hover:after {
+        color: white;
+        padding-left: 25%;
+    }
+
+    .facebook:hover:after {
+        content: "Facebook";
+    }
+
+    .twitter:hover:after {
+        content: "Twitter";
+    }
+
+    .instagram:hover:after {
+        content: "Instagram";
+    }
+
+    .pinterest:hover:after {
+        content: "Pinterest";
+    }
+
+    .youtube:hover:after {
+        content: "Youtube";
+    }
+
+    .linkedin:hover:after {
+        content: "Linkedin";
+    }
+
+    /*--Menu--*/
+    .menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu > li {
+        border-left: 2px solid #787878;
+        border-bottom: none;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
